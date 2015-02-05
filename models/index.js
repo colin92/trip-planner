@@ -1,40 +1,56 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/wikistack');
+mongoose.connect('mongodb://localhost/tripplanner');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
-// var Page, User;
-// var Schema = mongoose.Schema;
+var Place, Hotel, ThingToDo, Restaurant;
+var Schema = mongoose.Schema;
 
-// var pageSchema = new Schema({
-//   title: String, //{type: String, required: true},
-//   url_name: String,
-//   owner_id:   String,
-//   body:   String,
-//   date: { type: Date, default: Date.now },
-//   status: Number,
-//   tags: [String]
-// });
+function comList(stringArr){
+  return data.join(', ');
+}
 
-// // pageSchema.pre('save', function(next){
-// //  //does this before every save for data
-// // if (typeof this.title !== undefined)
-// // })
+var placeSchema = new Schema({
+  address: String,
+  city: String,
+  state:   String,
+  phone:   String,
+  location: { type: [Number],  //[<longitude>, <latitude>]
+              index: '2d' 
+            }
+});
+
+var hotelSchema = new Schema({
+  name: String,
+  place: String,
+  num_stars: {type: Number,
+              min: 1,
+              max: 5},
+  amenities: {type: [String], get: comList}
+})
 
 
-// pageSchema.virtual('full_route').get(function () {
-// 	return '/wiki/' + this.url_name;
-// });
+var thingtodoSchema = new Schema({
+  name: String,
+  place: String,
+  age_range: String
+})
 
-// var userSchema = new Schema({
-//   name:  {
-//       first: String,
-//       last: String
-//     },
-//   email: String
-// });
+var restaurantSchema = new Schema({
+  name: String,
+  place: String,
+  cuisine: {type: [String], get: comList},
+  price: {type: Number,
+          min: 1,
+          max: 5}
+})
 
-// Page = mongoose.model('Page', pageSchema);
-// User = mongoose.model('User', userSchema);
+Place = mongoose.model('Place', placeSchema);
+Hotel = mongoose.model('Hotel', hotelSchema);
+ThingToDo = mongoose.model('ThingToDo', thingtodoSchema);
+Restaurant = mongoose.model('Restaurant', restaurantSchema)
 
-// module.exports = {"Page": Page, "User": User};
+module.exports = {"Place": Place, 
+                  "Hotel": Hotel,
+                  "ThingToDo": ThingToDo,
+                  "Restaurant": Restaurant};

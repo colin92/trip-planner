@@ -1,6 +1,43 @@
 {% extends "layout.html" %}
 
 {% block content %}
+	<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&sensor=true"></script>
+
     <h1>{{title}}</h1>
-    <p>Welcome to {{title}}</p>
+
+    <div class = "googlemap">
+
+    </div>
+    <div class = "top-sidebar">
+    	Hotels
+    <select>
+    	{% for hotel in hotels %}
+    	<option>{{hotel.name}}</option>
+    	{% endfor %}
+    </select>
+    	<br>
+    	Restaurants
+	<select>
+    	{% for restaurant in restaurants %}
+    	<option>{{restaurant.name}}</option>
+    	{% endfor %}
+	</select>
+    	<br>
+    	Things To Do
+	<select>
+    	{% for thingtodo in thingstodo %}
+    	<option>{{thingtodo.name}}</option>
+    	{% endfor %}
+	</select>
+	<div>
+
+<!-- Making JSON data available -->
+<script>
+	{% autoescape false %}
+	var all_hotels = {{ hotels | json }};
+	var all_restaurants = {{ restaurants | json }};
+	var all_things_to_do = {{ things_to_do | json }};
+	{% endautoescape %}
+</script>
+
 {% endblock %}
