@@ -3,11 +3,12 @@
   <head>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Planner</title>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Trip Planner</a>
@@ -15,7 +16,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-left">
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
@@ -26,4 +27,33 @@
 
     {% block content %}{% endblock %}
   </body>
+ <script src="/bower_components/jquery/dist/jquery.js"></script>
+ <!-- Using Google Maps -->
+<script> 
+function initialize_gmaps() {
+    // initialize new google maps LatLng object
+    var myLatlng = new google.maps.LatLng(40.705786,-74.007672);
+    // set the map options hash
+    var mapOptions = {
+        center: myLatlng,
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    // get the maps div's HTML obj
+    var map_canvas_obj = document.getElementById("map-canvas");
+    // initialize a new Google Map with the options
+    var map = new google.maps.Map(map_canvas_obj, mapOptions);
+    // Add the marker to the map
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        title:"Hello World!"
+    });
+    // Add the marker to the map by calling setMap()
+    marker.setMap(map);
+}
+
+$(document).ready(function() {
+    initialize_gmaps();
+});
+</script>
 </html>

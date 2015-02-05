@@ -11,8 +11,7 @@ router.get('/', function(req, res) {
 	models.Hotel.find({}, function(err, rhotels){
 		models.Restaurant.find({}, function(err, rrestaurant){
 			models.ThingToDo.find({}, function(err, rthingstodo){
-  				res.render('index', { title: 'Everything', 
-			  						hotels: rhotels,
+  				res.render('index', {hotels: rhotels,
 			  						thingstodo: rthingstodo,
 			  						restaurants: rrestaurant,
 			  						key: env.google_api_key

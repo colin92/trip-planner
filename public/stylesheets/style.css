@@ -1,1 +1,27 @@
+body {
+  background-color: silver; }
+
+* {
+  border-size: border-box; }
+
+.navbar {
+  margin-bottom: 0; }
+
+#map-canvas {
+  background-color: purple;
+  height: 2000px;
+  width: 2000px; }
+
+#places {
+  background-color: LightGray;
+  float: right;
+  position: absolute;
+  z-index: 1; }
+
+#options {
+  background-color: gray;
+  float: right;
+  position: absolute;
+  z-index: 1; }
+
 /* Media Queries */

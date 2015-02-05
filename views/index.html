@@ -2,34 +2,40 @@
 
 {% block content %}
 	<script src="https://maps.googleapis.com/maps/api/js?key={{key}}&sensor=true"></script>
-
-    <h1>{{title}}</h1>
-
-    <div class = "googlemap">
-
-    </div>
-    <div class = "top-sidebar">
-    	Hotels
-    <select>
-    	{% for hotel in hotels %}
-    	<option>{{hotel.name}}</option>
-    	{% endfor %}
-    </select>
-    	<br>
-    	Restaurants
-	<select>
-    	{% for restaurant in restaurants %}
-    	<option>{{restaurant.name}}</option>
-    	{% endfor %}
-	</select>
-    	<br>
-    	Things To Do
-	<select>
-    	{% for thingtodo in thingstodo %}
-    	<option>{{thingtodo.name}}</option>
-    	{% endfor %}
-	</select>
-	<div>
+	<div class="row">
+    	<div class="col-lg-9" ><div id="map-canvas"></div></div>
+		<div id="places" class = "col-lg-3">
+		    <div class="panel">
+			    <h3>Hotels</h3>
+			    <select>
+			    	{% for hotel in hotels %}
+			    	<option>{{hotel.name}}</option>
+			    	{% endfor %}
+			    </select><button type="button" class="btn btn-default">X</button>
+			    	<br>
+			    <h3>Restaurants</h3>
+				<select>
+			    	{% for restaurant in restaurants %}
+			    	<option>{{restaurant.name}}</option>
+			    	{% endfor %}
+				</select><button type="button" class="btn btn-default">X</button>
+			    	<br>
+			    <h3>Things To Do</h3>
+				<select>
+			    	{% for thingtodo in thingstodo %}
+			    	<option>{{thingtodo.name}}</option>
+			    	{% endfor %}
+				</select><button type="button" class="btn btn-default">X</button>
+			</div>
+		</div>
+		<div id="options" class="col-lg-3">
+			<div class="panel">
+				<h3>My Hotel</h3>
+				<h3>My Restaurants</h3>
+				<h3>My Things To Do</h3>
+			</div>
+		</div>
+	</div>
 
 <!-- Making JSON data available -->
 <script>
