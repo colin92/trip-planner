@@ -1,8 +1,29 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+#places {
+  background-color: #80bf40;
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 190px;
+  zindex: 1; }
 
-a {
-  color: #00B7FF;
-}
+#plans {
+  background-color: #80bf40;
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 500px;
+  zindex: 1; }
+
+#map-canvas {
+  width: 100%;
+  height: 500px; }
+
+.navbar {
+  margin-bottom: 0px; }
+
+.navbar-inverse {
+  background-color: #2e2e6b; }
+  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: #ffff66; }
+    .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav > li > a:hover {
+      color: #ffffcc; }

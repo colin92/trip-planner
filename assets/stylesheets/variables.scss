@@ -1,0 +1,16 @@
+// Grid variables
+$columns: 12;
+$large: 960px;
+$medium: 640px;
+$small: 420px;
+$hue: 240;
+
+// Color variables
+$p-color: black;
+$a-color: hsl(200, 100%, 50%);
+$navbar-color: hsl($hue, 40%, 30%);
+$navbar-links: hsl($hue + 180, 100%, 70%);
+$navbar-links-hover: lighten($navbar-links, 20%);
+
+// Font variable
+
