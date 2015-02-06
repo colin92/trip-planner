@@ -1,38 +1,71 @@
-// @import "normalize";
-// @import "modern-business";
 @import "variables";
-@import "grid";
 @import "mixins";
 
-body{
-	background-color: silver;
+select{
+  min-width: 350px;
 }
 
-*{
-	border-size: border-box;
-}
-.navbar{
-	margin-bottom: 0;
+#daySelected{
+  text-align: center;
 }
 
-#map-canvas{
-	background-color: purple;
-	height: 2000px;
-	width: 2000px;
+#places {
+  float: right;
+  position: absolute;
+  right: 5px;
+  top: 190px;
+  zindex: 1;
+  ul, ul > li {
+    background-color: none;
+  }
+  .panel-heading {
+    background-color:lighten( hsl(90, 50%, 50%), 20%);
+    color: black;
+  }
+  .panel-body {
+    background-color: 
+  }
 }
 
-#places{
-	background-color: LightGray;
-	float: right;
-	position: absolute;
-	z-index: 1;
+#plans {
+  float: right;
+  position: absolute;
+  right: 5px;
+  top: 600px; //use to adjust placement of 
+  zindex: 1;
+  .panel-heading {
+    background-color:lighten( hsl(90, 50%, 50%), 20%);
+    color: black;
+  }
+  .panel-body {
+    // background-color: 
+  }
+}
+
+#map-canvas {
+  width: 100%;
+  height: 90vh;
 
 }
 
-#options{
-	background-color: gray;
-	float: right;
-	position: absolute;
-	z-index: 1;
+.navbar {
+  margin-bottom: 0px;
 }
+
+.navbar-inverse {
+  background-color: $navbar-color; 
+  .navbar-brand, .navbar-nav > li > a {
+    color: $navbar-links;
+    &:hover {
+      color: $navbar-links-hover;
+    }
+  }
+}
+
+
+
+
+
+
 @import "media-queries";
+
