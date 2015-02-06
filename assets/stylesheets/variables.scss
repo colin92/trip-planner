@@ -11,6 +11,7 @@ $a-color: hsl(200, 100%, 50%);
 $navbar-color: lighten( hsl(90, 50%, 50%), 20%); //hsl($hue, 40%, 30%);
 $navbar-links: black; //hsl($hue + 180, 100%, 70%);
 $navbar-links-hover: lighten($navbar-links, 20%);
+$no-border: 0px solid lightgreen;
 
 // Font variable
 

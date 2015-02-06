@@ -9,7 +9,7 @@
 
     <div id="panels" class="col-lg-3 col-md-6 col-sm-12">
     <div id="places">
-        <div class="panel panel-success">
+        <div class="panel panel-success panel-collapse" data-target="collapse">
             <div class="panel-heading">
                 <h4>Places</h4>
             </div>
@@ -17,7 +17,7 @@
                 <!-- <ul class="list list-unstyled"> -->
                     <!-- <li> -->
                         <div class="form-group form-inline">
-                            <h4>Hotels</h4>
+                            <h4><i class="glyphicon glyphicon-bed"></i> Hotels</h4>
                             <select class="form-control">
                                 {% for hotel in hotels %}
                                 <option>{{ hotel.name }}</option>
@@ -28,7 +28,7 @@
                     <!-- </li> -->
                     <!-- <li> -->
                         <div class="form-group form-inline">
-                            <h4>Restaurant</h4>
+                            <h4><i class="glyphicon glyphicon-apple"></i> Restaurant</h4>
                             <select class="form-control">
                                 {% for restaurant in restaurants %}
                                 <option>{{ restaurant.name }}</option>
@@ -39,7 +39,7 @@
                     <!-- </li> -->
                     <!-- <li> -->
                         <div class="form-group form-inline">
-                            <h4>Things to Do</h4>
+                            <h4><i class="glyphicon glyphicon-blackboard"></i> Things to Do</h4>
                             <select class="form-control">
                                 {% for thingToDo in thingstodo %}
                                 <option>{{ thingToDo.name }}</option>
@@ -55,7 +55,7 @@
 
     <div id="plans">
       <div id="daySelected">
-          <h3><div class="label label-info">Day [NumberHereJ9]</div></h3>
+          <h3><div class="label label-info">Day [NumberHereJ9] <button type="button" class="btn btn-danger">X</button></div></h3>
       </div>
         <div class="panel panel-success">
           <div class="panel-heading">
@@ -66,15 +66,19 @@
           </div>
           <div class="panel-body">
             <h4>My Hotel</h4>
-            <p>Placeholders</p>
+            <ol>
+                <li>Placeholders <button type="button" class="btn btn-danger">X</button></li>
+            </ol>
           </div>
           <div class="panel-body">
             <h4>My Restaurants</h4>
-            <p>Placeholders</p>
+            <ol>
+                <li>Placeholders <button type="button" class="btn btn-danger">X</button></li>
           </div>
           <div class="panel-body">
            <h4>My Things To Do</h4>
-            <p>Placeholders</p>
+            <ol>
+                <li>placeholders <button type="button" class="btn btn-danger">X</button></li>
           </div>
         </div>
     </div>
