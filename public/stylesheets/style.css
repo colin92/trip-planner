@@ -5,18 +5,27 @@
   right: 0px;
   top: 190px;
   zindex: 1; }
+  #places ul, #places ul > li {
+    background-color: none; }
+  #places .panel-heading {
+    background-color: #b3d98c;
+    color: black; }
+  #places .panel-body { }
 
 #plans {
-  background-color: #80bf40;
   float: right;
   position: absolute;
   right: 0px;
   top: 500px;
   zindex: 1; }
+  #plans .panel-heading {
+    background-color: #b3d98c;
+    color: black; }
+  #plans .panel-body { }
 
 #map-canvas {
   width: 100%;
-  height: 500px; }
+  height: 900px; }
 
 .navbar {
   margin-bottom: 0px; }
