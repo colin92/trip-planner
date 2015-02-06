@@ -3,11 +3,12 @@
 {% block content %}
   <div class="row">
     
-    <div class="col-lg-9">
+    <div class="col-lg-9 col-md-6 col-sm-12">
       <div id="map-canvas"></div>
     </div>
-    <div class="row">
-    <div id="places" class="col-lg-3">
+
+    <div id="panels" class="col-lg-3 col-md-6 col-sm-12">
+    <div id="places">
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h4>Places</h4>
@@ -51,12 +52,10 @@
             </div>
         </div>
     </div>
-    </div>
 
-    <div class="row">
-    <div id="plans" class="clearfix col-lg-3">
+    <div id="plans">
       <div id="daySelected">
-          <h3>Day [NumberHereJ9]</h3>
+          <h3><div class="label label-info">Day [NumberHereJ9]</div></h3>
       </div>
         <div class="panel panel-success">
           <div class="panel-heading">
@@ -78,7 +77,7 @@
             <p>Placeholders</p>
           </div>
         </div>
-      </div>
+    </div>
     </div>
   </div>
 {% endblock %}

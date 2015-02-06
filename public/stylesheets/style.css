@@ -1,38 +1,35 @@
-select {
-  min-width: 350px; }
+body {
+  background-color: lightgray; }
+
+#panels {
+  float: right;
+  position: absolute;
+  right: 5px;
+  top: 10%;
+  zindex: 1; }
 
 #daySelected {
   text-align: center; }
 
-#places {
-  float: right;
-  position: absolute;
-  right: 5px;
-  top: 190px;
-  zindex: 1; }
-  #places ul, #places ul > li {
-    background-color: none; }
-  #places .panel-heading {
-    background-color: #b3d98c;
-    color: black; }
-  #places .panel-body { }
+#places select {
+  width: 85%; }
+#places ul, #places ul > li {
+  background-color: none; }
+#places .panel-heading {
+  background-color: #b3d98c;
+  color: black; }
 
-#plans {
-  float: right;
-  position: absolute;
-  right: 5px;
-  top: 600px;
-  zindex: 1; }
-  #plans .panel-heading {
-    background-color: #b3d98c;
-    color: black; }
+#plans .panel-heading {
+  background-color: #b3d98c;
+  color: black; }
 
 #map-canvas {
   width: 100%;
-  height: 90vh; }
+  height: 95vh; }
 
 .navbar {
-  margin-bottom: 0px; }
+  margin-bottom: 1px;
+  border: 0px solid lightgreen; }
 
 .navbar-inverse {
   background-color: #b3d98c; }
